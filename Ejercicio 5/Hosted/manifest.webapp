@@ -1,0 +1,19 @@
+{
+	"version": "1.0",
+	"name": "Geolocation",
+	"description": "Geolocation",
+	"launch_path": "/host/0B5CO_tdcRXsyeWV5cmczNk5VY1E/index.html",
+	"icons": {
+		"16": "/host/0B5CO_tdcRXsyVlM2X1FXd1Uwd2M/icon128.png",
+		"48": "/host/0B5CO_tdcRXsyVlM2X1FXd1Uwd2M/icon48.png",
+		"128": "/host/0B5CO_tdcRXsyVlM2X1FXd1Uwd2M/icon128.png"
+	},
+	"developer": {
+		"name": "David"
+	},
+	"permissions": {
+		"geolocation": {
+			"description": "Required to show your current location."
+		}
+	}
+}

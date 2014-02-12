@@ -1,0 +1,43 @@
+@font-face {
+	font-family: 'firefoxos';
+	src: url('fonts/FiraSansOT-Regular.otf') format("opentype");
+}
+body
+{
+	font-family: 'firefoxos';
+
+}
+#contenedor
+{
+	width: 480px;
+	height: 800px;
+	
+	background-image: url('fondo.jpg')
+}
+#menu
+{
+	background-color: #cd6723;
+	height:5rem;
+}
+h1
+{
+	color:white;
+	margin-left: 1.5rem;
+ 	padding-left: 1.5rem;
+ 	padding-top: 1.5rem;
+}
+#cuerpo li
+{
+	margin:1.5rem;
+	height: 4.5rem;
+	list-style: none;
+}
+a
+{
+	color:inherit;
+	text-decoration: none;
+}
+a:hover
+{
+	background-color: #00AACC;
+}

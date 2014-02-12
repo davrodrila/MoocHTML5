@@ -1,0 +1,53 @@
+ol
+{
+	list-style-type: lower-alpha;
+}
+#comojugar
+{
+	position:relative;
+	background:#D6C1C1;
+	width:600px;
+	border: 1px solid;
+	border-radius: 20px;
+	float: left;
+}
+.indentaciones p,h1,h2,h3,h4,ul,li
+{
+	margin-left: 2em;
+	margin-bottom: 2em;
+	margin-right:2em;
+}
+
+body
+{
+	background:#cccccc;
+	color:black;
+}
+#wrapper
+{
+	position:absolute;
+	margin-left:5%;
+	width:1700px;
+	clear:both;
+
+}
+#reglas
+{
+	position:relative;
+	background:#D6C1C1;
+	width:700px;
+	float:left;
+	margin-left: 5em;
+	border: 1px solid;	
+	border-radius: 20px;
+}
+#maniobras
+{
+	background:#D6C1C1;
+	width:800px;
+	margin-top:70%;
+	margin-left: 20%;
+	position:relative;
+	border: 1px solid;
+	border-radius: 20px;
+}

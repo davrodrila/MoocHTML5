@@ -1,0 +1,48 @@
+#contenedor
+{
+	width:70%;
+	margin-left:20%;
+}
+
+table
+{
+	width:100%;
+	table-layout:fixed;
+}
+#contenedor th
+{
+	font-size:1.5em;	
+}
+
+.par
+{
+	background-color:#3AA6D0;
+}
+.impar
+{
+	background-color:#62B1D0;
+}
+.cabecera
+{
+	background-color:#FF8500;	
+}
+tr:hover
+{
+	background-color:#FFA340;
+	color:white;
+	font-weight: bolder;
+}
+.cabecera:hover
+{
+	background-color:#FF8500;		
+}
+td
+{
+	height:115%;
+	width:50%;
+	font-size:1.3em;
+}
+.nombre td
+{
+	width: 30%;
+}

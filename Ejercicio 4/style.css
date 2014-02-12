@@ -1,0 +1,47 @@
+#contenedor
+{
+	margin-left:20%;
+}
+#reloj
+{
+	background-color:#C0C0C0;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
+	font-size:3em;
+	font-weight: bold;
+	padding:0.5em;
+	width:10em;
+	text-align: center;
+}
+#botonera
+{
+	margin-top:0.5em;
+	margin-left:12%;	
+}
+#lista
+{
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
+	background-color:#B9B9B9;
+	position:fixed;
+	margin-left:30%;
+	width:30%;
+	margin-top:-5%;
+	padding:2em;
+}
+#lista
+{
+	list-style-type: disc;
+}
+#lista li
+{
+	font-size:1.2em;
+	font-family:sans-serif;
+	border-bottom: 1px solid;
+}
+#lista li:hover
+{
+	background-color: #FFB2B2;
+}

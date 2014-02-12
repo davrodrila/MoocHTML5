@@ -1,0 +1,33 @@
+body{
+	font-family: 'Droid Sans', 'Helvetica', Arial, sans-serif;
+	background-color: darkgray;
+}
+#map{
+	display: block;
+	margin: 10px;
+	padding: 0;
+	border-style: solid;
+	border-radius: 10px;
+	position: absolute;	/* posición absoluta a navegador */
+	top: 50px;	/* 50px debajo de borde de navegador */
+	left: 0;	/* ajusta a borde de navegador */
+	right: 0;
+	bottom: 0;
+	background-color: lightgrey;
+}
+#limpiar{
+	float: right;
+	margin-right: 5px;
+	padding: 10px;
+	font-weight: bolder;
+	z-index: 0;
+}
+h1{
+	margin: 10px;
+	padding: 0px;
+	padding-left: 0px;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: -1;
+}

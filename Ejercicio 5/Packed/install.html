@@ -1,0 +1,22 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Install</title>
+	</head>
+	<body>
+	<script type="text/javascript">
+		(function(){
+			var murl = location.href.replace("install.html","") + "package.manifest";
+			if (navigator.mozApps.installPackage){
+				var r = navigator.mozApps.installPackage(murl);
+				r.onsuccess = function(){alert("Instalación completada. " + this.result.origin)};
+				r.onerror = function(){alert("Error de instalación: " + this.error.name)};
+			}
+			else {
+				alert("ERROR: Esta aplicación no es compatible con tu dispositivo.");
+			}
+		})();
+	</script>
+	</body>
+</html>

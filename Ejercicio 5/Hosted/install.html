@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Install</title>
+		<script type="text/javascript" src="scripts/zepto.min.js"></script>
+	</head>
+	<body>
+		<div id="install"></div>
+		<script>
+			$(document).ready(function(){
+				var murl = location.href.replace("install.html","") + "manifest.webapp";
+				var r = navigator.mozApps.checkInstalled(murl);
+				r.onsuccess = function(){
+					if (r.result){
+						$("#install").text("La app ya esta instalada");
+					}
+					else {
+						$("#install").html("<input type='button' value='Instalar'>");
+						$("#install").click(function(){
+							var req = navigator.mozApps.install(murl);
+							req.onsuccess = function(data){$("#install").text("La app ha sido instalada").unbind('click');};
+							req.onerror = function(errObj){alert("Error de instalacion: " + this.error.name);};
+						});
+					}
+				};
+				r.onerror = function(){
+					alert("Error comprobando estado de la instalacion: " + this.error.message);
+				};
+			});
+		</script>
+	</body>
+</html>

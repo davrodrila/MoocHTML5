@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Cronómetro</title>
+	<script src="zepto.min.js"></script>
+	<script src="touch.js"></script>
+	<link rel="stylesheet" href="style.css">
+	<script type="text/javascript">
+	$(function() 
+	{
+			localStorage.c = (localStorage.c || "0.00");
+			var reloj = $("#reloj");
+			var tiempos;
+			try {
+			    tiempos = JSON.parse(localStorage.getItem("tiempos"));
+			} catch(e) {
+			    tiempos = [];    // Si el parseo del string falla, inicializamos el array vacio
+			}
+			var botonControl, botonInicializar;
+			botonControl = $("#control");
+			botonInicializar = $("#inicializar");
+			var controlador;
+			function empezar()
+			{
+				controlador = setInterval(tick,10);
+				botonControl.html("Parar");
+				botonInicializar.hide();
+			}
+			function tick()
+			{
+				cronometrar();
+				dibujar();
+			}
+			function cronometrar()
+			{
+				localStorage.c = +localStorage.c +  0.01;
+			}
+			function dibujar()
+			{
+				reloj.html((+localStorage.c).toFixed(2));
+				mostrarLista();
+			}
+			function parar()
+			{
+				clearInterval(controlador);
+				controlador = undefined;
+				botonControl.html("Empezar");
+				botonInicializar.show();
+				tiempos.push((localStorage.c+" "));
+				localStorage.tiempos = JSON.stringify(tiempos);
+				mostrarLista();
+			}
+			function mostrarLista() //Función encargada de dibujar la lista de tiempos a los que se paró el cronometro
+			{
+				var listaTiempos = $("#contenedorLista");
+				if (tiempos!==null)
+				{
+					if (tiempos.length===0)
+					{
+						listaTiempos.hide();
+					} else 
+					{
+						var listado = $("#lista");
+						listado.empty();
+						for (var i=0;i<tiempos.length;i++)
+						{
+							listado.append("<li>Intervalo número " + (+i+1) + ": "+ (+tiempos[i]).toFixed(2));
+						}
+						listaTiempos.show();
+					}
+				}
+			}
+			function control()
+			{
+				if (!controlador)
+				{
+					empezar();
+				} else 
+				{
+					parar();
+				}
+			}
+			dibujar();
+			botonControl.on('click',control);
+			botonInicializar.on('click',function (){tiempos = new Array();localStorage.c = "0.00";localStorage.tiempos = ""; dibujar()});
+			reloj.on("tap",control);
+			reloj.on("swipe",function (){tiempos = new Array();localStorage.c = "0.00";localStorage.tiempos = ""; dibujar()});
+	});
+	</script>
+</head>
+<body>
+	<div id="contenedor">
+		<div id="reloj">
+			
+		</div>
+		<div id="contenedorLista">
+			<ul id="lista">
+			</ul>
+		</div>
+		<div id="botonera">
+			<button id="control">Empezar</button>
+			<button id="inicializar">Resetear</button>
+		</div>
+	</div>
+</body>
+</html>
